@@ -1,0 +1,23 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  generateName: juphc-tc-pipeline-run- # Genera un nombre único en cada ejecución
+spec:
+  pipelineRef:
+    name: juphc-tc-pipeline # Debe coincidir exactamente con el nombre en tu pipeline.yaml
+  params:
+    - name: repo-url
+      value: "https://github.com/LoreGPA11/juphc-tc_pipeline.git"
+    - name: branch
+      value: "main"
+    - name: build-image
+      value: "node:20-buster-slim"
+    - name: app-name
+      value: "tax-calculator"
+  workspaces:
+    - name: pipeline-workspace
+      persistentVolumeClaim:
+        claimName: pipelinerun-pvc # Verifica que este nombre sea el mismo que en tu pvc.yaml
+    - name: dockerconfig-ws
+      secret:
+        secretName: docker-config # El secreto para subir la imagen a IBM Cloud
