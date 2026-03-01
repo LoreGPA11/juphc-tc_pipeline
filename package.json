@@ -1,0 +1,15 @@
+{
+  "name": "juphc-tc_pipeline",
+  "version": "1.0.0",
+  "description": "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Python 3.9](https://img.shields.io/badge/Python-3.9-green.svg)](https://shields.io/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine": "^6.1.0"
+  }
+}
